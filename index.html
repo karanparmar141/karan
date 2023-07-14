@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>karan-home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- header  -->
+    <header>
+        <div class="container">
+            <div class="row justfy-content-between align-itmes-center">
+                <div class="logo col-xl-2 col-lg-3 col-md-3 col-sm-3 col-xs-4">
+                    <a href="#"><img src="img/KARAN.png" alt=""></a>
+                </div>
+                <nav class="toggle">
+                    <ul class="row">
+                        <li><a id="#home" class="uppercase font-baloo">home</a></li>
+                        <li><a href="#about" class="uppercase font-baloo">about me</a></li>
+                        <li><a href="#portfolio" class="uppercase font-baloo">portfolio</a></li>
+                        <li><a href="#skills" class="uppercase font-baloo">skills</a></li>
+                        <li><a href="#education" class="uppercase font-baloo">education</a></li>
+                        <li><a href="#contact" class="uppercase font-baloo">contact</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-logo toggle">
+                    <a href="#" class="font-whitex"><i class="fa-solid fa-bars font-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- banner section-->
+    <section class="banner-bg padding-100">
+        <div class="container">
+            <div class="row align-itmes-center">
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 order-1">
+                    <div class="banner-content">
+                        <h2 class="fs-40 uppercase font-baloo">Hi , I Am <a href="#">Karan Parmar</a></h2>
+                        <h2 class="fs-30 captalize font-baloo">front end developer</h2>
+                        <div class="row banner-icon">
+                            <div class="w-50"><i class="fa-brands fa-facebook-f"></i></div>
+                            <div class="w-50"><i class="fa-brands fa-instagram"></i></div>
+                            <div class="w-50"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="w-50"><i class="fa-brands fa-github"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12 order-2">
+                    <div class="banner-img">
+                        <img src="img/banner-img.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section -->
+    <section class="about padding-100" id="about">
+        <div class="container">
+            <div class="comman-hedding">
+                <h1 class="font-upper font-cinzel">about me</h1>
+            </div>
+            <div class="about-detail row align-items-center">
+                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                    <div class="about-img">
+                        <img src="img/about-img.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    <div class="about-content">
+                        <p class="font-robot">First of all my name is <span class="font-cinzel">Karan Parmar</span>. I
+                            study in red and white institute through which my communication skills and soft skills
+                            increase.</p>
+                        <p class="font-robot"> Currently , I am studying in bca along with doing front and developer
+                            course. I am increasing my skills with the help of this course. I am still fresher in this
+                            filled and I have done basic project. Which I have been taught in front and developer.</p>
+                        <h2 class="font-upper font-robot">i think about status in my life :</h2><span
+                            class="font-cinzel font-white font-upper">"Every Day is a New Challeng"</span>
+                        <div class="btn-wrapper">
+                            <button class="btn" id="downloadBtn">
+                                <span class="btn__text btn__starter-text">Download</span>
+                            </button>
+                            <span class="btn__text btn__ender-text">Open File</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery-3.6.4.js"></script>
+    <script>
+        $(".toggle").click(function () {
+            $("header").toggleClass("show")
+        })
+    </script>
+    <script>
+        var btn = document.querySelector('#downloadBtn')
+
+        function startDownload() {
+            btn.addEventListener('click', function () {
+                this.classList.add('is-active')
+
+                setTimeout(function () {
+                    btn.classList.add('dl-completed')
+                    btn.classList.add('animation-ended')
+                }, 1200)
+            })
+        }
+
+        startDownload();
+    </script>
+</body>
+
+</html>
