@@ -76,14 +76,9 @@
                         <p class="font-robot"> Currently , I am studying in bca along with doing front and developer
                             course. I am increasing my skills with the help of this course. I am still fresher in this
                             filled and I have done basic project. Which I have been taught in front and developer.</p>
-                        <h2 class="font-upper font-robot">i think about status in my life :</h2><span
-                            class="font-cinzel font-white font-upper">"Every Day is a New Challeng"</span>
-                        <div class="btn-wrapper">
-                            <button class="btn" id="downloadBtn">
-                                <span class="btn__text btn__starter-text">Download</span>
-                            </button>
-                            <span class="btn__text btn__ender-text">Open File</span>
-                        </div>
+                        <h2 class="font-upper font-robot">i think about status in my life :</h2>
+                        <span class="font-cinzel font-white font-upper">"Every Day is a New Challeng"</span>
+                        <button class="glow-on-hover" type="button">HOVER ME, THEN CLICK ME!</button>
                     </div>
                 </div>
             </div>
@@ -94,22 +89,6 @@
         $(".toggle").click(function () {
             $("header").toggleClass("show")
         })
-    </script>
-    <script>
-        var btn = document.querySelector('#downloadBtn')
-
-        function startDownload() {
-            btn.addEventListener('click', function () {
-                this.classList.add('is-active')
-
-                setTimeout(function () {
-                    btn.classList.add('dl-completed')
-                    btn.classList.add('animation-ended')
-                }, 1200)
-            })
-        }
-
-        startDownload();
     </script>
 </body>
 

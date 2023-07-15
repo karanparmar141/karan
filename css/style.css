@@ -1,17 +1,365 @@
-/* Error: Undefined variable.
- *     ,
- * 310 |         background-color: $grey;
- *     |                           ^^^^^
- *     '
- *   style.scss 310:27  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a     \2577 \a 310 \2502          background-color: $grey;\d\a     \2502                            ^^^^^\a     \2575 \a   style.scss 310:27  root stylesheet";
+@import url(allmin.css);
+@import url(media.css);
+@import url(stylesheet.css);
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
+
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-sm-1,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-xl-1,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12 {
+  padding: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-itmes-center {
+  align-items: center;
+}
+
+.justfy-content-between {
+  justify-content: space-between;
+}
+
+.padding-100 {
+  padding: 100px 0px;
+}
+
+.font-robot {
+  font-family: "Roboto Condensed";
+}
+
+.font-baloo {
+  font-family: "Baloo Thambi 2";
+}
+
+.fs-60 {
+  font-size: 60px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.captalize {
+  text-transform: capitalize;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+header {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  z-index: 999;
+}
+header .logo {
+  margin: 10px 0;
+}
+header nav ul li {
+  padding-left: 15px;
+}
+header nav ul li a {
+  letter-spacing: 2x;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.5s;
+  color: #000;
+}
+header nav ul li a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  bottom: -5px;
+  left: 0;
+  transition: all 1s;
+  border-bottom: 2px solid #0385db;
+}
+header nav ul li a:hover::after,
+header nav ul li a:hover {
+  width: 110%;
+  height: 110%;
+  color: #0385db;
+}
+header .nav-logo {
+  display: none;
+}
+
+.banner-bg {
+  background-image: url(../img/banner.jpg);
+  background-size: cover;
+}
+.banner-bg .banner-content h2 {
+  text-align: right;
+}
+.banner-bg .banner-content h2 a {
+  color: #000;
+  transition: all 0.5s;
+}
+.banner-bg .banner-content h2:hover a {
+  color: #006eb7;
+}
+.banner-bg .banner-content .banner-icon {
+  align-items: center;
+  justify-content: end;
+}
+.banner-bg .banner-content .banner-icon .w-50 {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 55px;
+  transition: all 0.5s;
+  margin: 0px 10px;
+}
+.banner-bg .banner-content .banner-icon .w-50 i {
+  font-size: 25px;
+}
+.banner-bg .banner-content .banner-icon .w-50:hover {
+  color: #0385db;
+  background-color: #fff;
+  border: 2px solid #006eb7;
+}
+.banner-bg .banner-img {
+  margin-top: 100px;
+}
+.banner-bg .banner-img img {
+  border: 10px solid #000;
+}
+
+.about .about-detail .about-img {
+  width: 80%;
+  filter: brightness(0.8);
+}
+.about .about-detail .about-img img {
+  transition: all 0.5s;
+}
+.about .about-detail .about-img:hover img {
+  filter: grayscale(1.2);
+}
+.about .about-content p {
+  text-transform: capitalize;
+  font-family: "Roboto Condensed";
+  font-weight: 500;
+  font-size: 25px;
+  text-align: start;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 35px;
+  padding-top: 5px;
+}
+.about .about-content h2 {
+  margin: 20px 0;
+}
+.about .about-content span {
+  font-size: 22px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  font-weight: 500;
+}
+.about .about-content .glow-on-hover {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+.about .about-content .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.about .about-content .glow-on-hover:active {
+  color: #000;
+}
+.about .about-content .glow-on-hover:active:after {
+  background: transparent;
+}
+.about .about-content .glow-on-hover:hover:before {
+  opacity: 1;
+}
+.about .about-content .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .order-1 {
+    order: 2;
+  }
+  .order-2 {
+    order: 1;
+  }
+  .toggle {
+    display: block;
+    padding-right: 10px;
+  }
+  header nav ul {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    background-color: #fff;
+    left: 0%;
+    top: 90%;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  header nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 35px;
+  }
+  header .nav-logo {
+    display: block;
+  }
+  .show nav ul {
+    top: -300%;
+  }
+  .banner-bg .banner-content h2 {
+    text-align: center;
+  }
+  .banner-bg .banner-content .banner-icon {
+    justify-content: center;
+  }
+  .banner-bg .banner-img {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .show nav ul {
+    top: -350%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -271,98 +271,60 @@ header {
             word-spacing: 5px;
             font-weight: 500;
         }
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            &:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left:-2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+            &:active {
+                color: #000
+            }
+            &:active:after {
+                background: transparent;
+            }
+            &:hover:before {
+                opacity: 1;
+            }
+            &:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
     }
-    .btn-wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        cursor: pointer;
-      .btn {
-        position: relative;
-        display: flex;
-        will-change: transform, background-color;
-        width: 10rem;
-        height: 250px;
-        border-radius: 2px;
-        border: none;
-        padding: 0;
-        background-color: $black;
-        color: white;
-        transition: all ease-out .2s;
-        transform-origin: bottom;
-        outline: none;
-        overflow: hidden;
-        
-        &:hover {
-          background-color: $primery-700;
-        }
-        &::before {
-          content: '';
-          display: block;
-          transition: transform 1s ease-out 2s;
-          transform: scaleX(0);
-        }
-      }
-      
-      .btn.is-active {
-        transform: scaleY(0.1);
-        background-color: $grey;
-        
-        .btn__starter-text {
-          opacity: 0;
-        }
-        
-        &::before {
-          display: block;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 8px;
-          background-color: $black;
-          transition: transform 1s ease-out;
-          transform: scaleX(1);
-          transform-origin: left;
-          transition-delay: .2s;
-        }
-      }
-      
-      .btn.dl-completed {
-        transform: scale(.5, .1);
-          
-        &.btn__ender-text {
-          opacity: 1;
-          transform: none;
-        }
-      }
-      .btn.animation-ended {
-        will-change: auto;
-      }
-      
-      .btn__text {
-        display: block;
-        width: 100%;
-        text-align: center;
-        line-height: $btn-height;
-      }
-      
-      .btn__ender-text {
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        will-change: opacity;
-        color: $black;
-        transform: translateY(1rem);
-        transition: all ease-out .3s 1s;
-        transition-delay: .3s;
-        pointer-events: none;
-      }
-    }
-    
 }
 // media 
 @media (max-width:991px) {
