@@ -242,7 +242,7 @@ header {
             width: 80%;
             filter: brightness(0.8);
             img{
-                transition: all 0.5s;
+                transition: all 0.8s;
             }
         }
         .about-img:hover img{
@@ -252,21 +252,16 @@ header {
     .about-content{
         p{
             text-transform: capitalize;
-            font-family: $font-robot;
-            font-weight: 500;
             font-size: 25px;
-            text-align: start;
-            letter-spacing: 1px;
-            word-spacing: 1px;
             line-height: 35px;
             padding-top:5px ;
         }
         h2{
             margin: 20px 0;
+
         }
         span{
             font-size: 22px;
-            // padding-left: 40px;
             letter-spacing: 2px;
             word-spacing: 5px;
             font-weight: 500;
@@ -274,14 +269,17 @@ header {
         .glow-on-hover {
             width: 220px;
             height: 50px;
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #111;
+            border: $primery-700;
+            color: $white;
+            background: $primery-900;
             cursor: pointer;
             position: relative;
             z-index: 0;
             border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            display: block;
+            margin-top: 20px;
             &:before {
                 content: '';
                 background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -291,15 +289,15 @@ header {
                 background-size: 400%;
                 z-index: -1;
                 filter: blur(5px);
-                width: calc(100% + 4px);
-                height: calc(100% + 4px);
+                width: 100% ;
+                height: 100%;
                 animation: glowing 20s linear infinite;
                 opacity: 0;
                 transition: opacity .3s ease-in-out;
                 border-radius: 10px;
             }
             &:active {
-                color: #000
+                color:$white;
             }
             &:active:after {
                 background: transparent;
@@ -313,7 +311,7 @@ header {
                 position: absolute;
                 width: 100%;
                 height: 100%;
-                background: #111;
+                background: $primery-700;
                 left: 0;
                 top: 0;
                 border-radius: 10px;

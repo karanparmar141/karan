@@ -228,19 +228,14 @@ header .nav-logo {
   filter: brightness(0.8);
 }
 .about .about-detail .about-img img {
-  transition: all 0.5s;
+  transition: all 0.8s;
 }
 .about .about-detail .about-img:hover img {
   filter: grayscale(1.2);
 }
 .about .about-content p {
   text-transform: capitalize;
-  font-family: "Roboto Condensed";
-  font-weight: 500;
   font-size: 25px;
-  text-align: start;
-  letter-spacing: 1px;
-  word-spacing: 1px;
   line-height: 35px;
   padding-top: 5px;
 }
@@ -256,14 +251,17 @@ header .nav-logo {
 .about .about-content .glow-on-hover {
   width: 220px;
   height: 50px;
-  border: none;
-  outline: none;
+  border: #0385db;
   color: #fff;
-  background: #111;
+  background: #006eb7;
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+  margin-top: 20px;
 }
 .about .about-content .glow-on-hover:before {
   content: "";
@@ -274,15 +272,15 @@ header .nav-logo {
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
-  width: calc(100% + 4px);
-  height: calc(100% + 4px);
+  width: 100%;
+  height: 100%;
   animation: glowing 20s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 .about .about-content .glow-on-hover:active {
-  color: #000;
+  color: #fff;
 }
 .about .about-content .glow-on-hover:active:after {
   background: transparent;
@@ -296,7 +294,7 @@ header .nav-logo {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
+  background: #0385db;
   left: 0;
   top: 0;
   border-radius: 10px;
