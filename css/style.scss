@@ -146,7 +146,7 @@ $black:#000;
 // header
 header {
     position: absolute;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.714);
     width: 100%;
     z-index: 999;
     .logo {
@@ -188,7 +188,6 @@ header {
         display: none;
     }
 }
-
 // banner section 
 .banner-bg {
     background-image: url(../img/banner.jpg);
@@ -324,6 +323,159 @@ header {
         }
     }
 }
+// education
+.education{
+    background-color: #5067d91d;
+    .my-education{
+        border-left: 2px solid $primery-900;
+        position: relative;
+        margin: 80px 0;
+        .icon{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: $primery-900;
+            text-align: center;
+            top: -50px;
+            left: -25px;
+            font-weight: 800;
+            transition: all 0.5s;
+            i{
+                color: $white;
+                line-height: 50px;
+                font-size: 25px;
+            }
+        }
+        &:hover i{
+            color: $primery-900;
+        }
+        &:hover .icon{
+            background-color: transparent;
+            border: 2px solid $primery-900;
+        }
+        p{
+            font-size: 15px;
+            letter-spacing: 3px;
+            padding-left: 40px;
+        }
+        h1{
+            padding:10px 0;
+            padding-left: 40px; 
+        }
+    }
+}
+// skills secation
+.skills{
+    .comman-hedding{
+        h1{
+            padding: 5px;
+        }
+    }
+    .skills-details{
+        background-image: url(../img/circle-1.png);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        .skill-content-1{
+            .skills-pre{
+                width: 100%;
+                height: 15px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                background-color: #0098fda8;
+                border-radius: 15px;
+                position: relative;
+                .skills-sub-pre{
+                    border-radius: 15px;
+                    width: 95%;
+                    height: 15px;
+                    background-color: $primery-900;
+                    text-align: end;
+                }
+            }
+        }
+        .skill-content-2{
+            .skills-pre{
+                width: 100%;
+                height: 15px;
+                margin-top: 10px;
+                background-color: #0098fda8;
+                border-radius: 15px;
+                margin-bottom: 30px;
+                position: relative;
+                .skills-sub-pre{
+                    border-radius: 15px;
+                    width: 83%;
+                    height: 15px;
+                    background-color: $primery-900;
+                    text-align: end;
+                }
+            }
+        }
+        .skill-content-3{
+            .skills-pre{
+                width: 100%;
+                height: 15px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                background-color: #0098fda8;
+                border-radius: 15px;
+                position: relative;
+                .skills-sub-pre{
+                    width: 87%;
+                    height: 15px;
+                    border-radius: 15px;
+                    background-color: $primery-900;
+                    text-align: end;
+                }
+            }
+        }.skill-content-4{
+            .skills-pre{
+                width: 100%;
+                height: 15px;
+                background-color: #0098fda8;
+                border-radius: 15px;
+                margin-top: 10px;
+                margin-bottom: 30px;
+                position: relative;
+                .skills-sub-pre{
+                    width: 80%;
+                    height: 15px;
+                    border-radius: 15px;
+                    background-color: $primery-900;
+                    text-align: end;
+                }
+            }
+        }
+    }
+}
+// portfolio
+.portfolio{
+    background-image: url(../img/R.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.img-box{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    transition: all 0.5s;
+    filter: grayscale(100%);
+    &:hover img{
+        transform: translateY(-1000px);
+    }
+    &:hover{
+        filter: grayscale(0%);
+    }
+    img{
+        transition: all 15s;
+    }
+}
+
+
+
+
+
+
 // media 
 @media (max-width:991px) {
     .order-1{
@@ -376,9 +528,36 @@ header {
             margin-top: 0px;
         }
     }
+    .about{
+        .about-detail{
+            .about-img{
+                margin: auto;
+                // width: 100%;
+            }
+        }
+    }
+    .education{
+    
+        .my-education{
+            p{
+                
+                text-align: center;
+            }
+            h1{
+                text-align: center;
+            }
+        }
+    }
 }
 @media (max-width:767px) {
     .show nav ul {
         top: -350%;
     }
+}
+.fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color:white;
 }

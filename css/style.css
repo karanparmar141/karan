@@ -143,7 +143,7 @@ ol {
 
 header {
   position: absolute;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.714);
   width: 100%;
   z-index: 999;
 }
@@ -311,6 +311,143 @@ header .nav-logo {
   }
 }
 
+.education {
+  background-color: rgba(80, 103, 217, 0.1137254902);
+}
+.education .my-education {
+  border-left: 2px solid #006eb7;
+  position: relative;
+  margin: 80px 0;
+}
+.education .my-education .icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #006eb7;
+  text-align: center;
+  top: -50px;
+  left: -25px;
+  font-weight: 800;
+  transition: all 0.5s;
+}
+.education .my-education .icon i {
+  color: #fff;
+  line-height: 50px;
+  font-size: 25px;
+}
+.education .my-education:hover i {
+  color: #006eb7;
+}
+.education .my-education:hover .icon {
+  background-color: transparent;
+  border: 2px solid #006eb7;
+}
+.education .my-education p {
+  font-size: 15px;
+  letter-spacing: 3px;
+  padding-left: 40px;
+}
+.education .my-education h1 {
+  padding: 10px 0;
+  padding-left: 40px;
+}
+
+.skills .comman-hedding h1 {
+  padding: 5px;
+}
+.skills .skills-details {
+  background-image: url(../img/circle-1.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+.skills .skills-details .skill-content-1 .skills-pre {
+  width: 100%;
+  height: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: rgba(0, 152, 253, 0.6588235294);
+  border-radius: 15px;
+  position: relative;
+}
+.skills .skills-details .skill-content-1 .skills-pre .skills-sub-pre {
+  border-radius: 15px;
+  width: 95%;
+  height: 15px;
+  background-color: #006eb7;
+  text-align: end;
+}
+.skills .skills-details .skill-content-2 .skills-pre {
+  width: 100%;
+  height: 15px;
+  margin-top: 10px;
+  background-color: rgba(0, 152, 253, 0.6588235294);
+  border-radius: 15px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.skills .skills-details .skill-content-2 .skills-pre .skills-sub-pre {
+  border-radius: 15px;
+  width: 83%;
+  height: 15px;
+  background-color: #006eb7;
+  text-align: end;
+}
+.skills .skills-details .skill-content-3 .skills-pre {
+  width: 100%;
+  height: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: rgba(0, 152, 253, 0.6588235294);
+  border-radius: 15px;
+  position: relative;
+}
+.skills .skills-details .skill-content-3 .skills-pre .skills-sub-pre {
+  width: 87%;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #006eb7;
+  text-align: end;
+}
+.skills .skills-details .skill-content-4 .skills-pre {
+  width: 100%;
+  height: 15px;
+  background-color: rgba(0, 152, 253, 0.6588235294);
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.skills .skills-details .skill-content-4 .skills-pre .skills-sub-pre {
+  width: 80%;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #006eb7;
+  text-align: end;
+}
+
+.portfolio {
+  background-image: url(../img/R.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.img-box {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  transition: all 0.5s;
+  filter: grayscale(100%);
+}
+.img-box:hover img {
+  transform: translateY(-1000px);
+}
+.img-box:hover {
+  filter: grayscale(0%);
+}
+.img-box img {
+  transition: all 15s;
+}
+
 @media (max-width: 991px) {
   .order-1 {
     order: 2;
@@ -353,11 +490,27 @@ header .nav-logo {
   .banner-bg .banner-img {
     margin-top: 0px;
   }
+  .about .about-detail .about-img {
+    margin: auto;
+  }
+  .education .my-education p {
+    text-align: center;
+  }
+  .education .my-education h1 {
+    text-align: center;
+  }
 }
 @media (max-width: 767px) {
   .show nav ul {
     top: -350%;
   }
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
