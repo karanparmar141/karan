@@ -141,6 +141,60 @@ ol {
   order: 2;
 }
 
+.sq-loder {
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sq-loder .sq-loder-4 {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #0c1957;
+  animation: scale1 2s linear infinite;
+  border-radius: 100%;
+}
+.sq-loder .sq-loder-4 .in-sq-loder-4 {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 5px solid rgba(93, 131, 227, 0.5882352941);
+  animation: scale2 2s ease-in infinite;
+  overflow: hidden;
+}
+.sq-loder .sq-loder-4 .in-sq-loder-4 .in-sq-loder-4 img {
+  margin: 5px;
+  animation: scale1 2s ease-out infinite;
+}
+
+@keyframes scale1 {
+  0% {
+    transform: perspective(200px) rotatex(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(200px) rotatey(180deg) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(200px) rotatey(360deg) rotateY(360deg);
+  }
+}
+@keyframes scale2 {
+  0% {
+    width: 100%;
+    transform: perspective(200px) rotatex(0deg) rotateY(0deg);
+  }
+  50% {
+    width: 80%;
+    height: 80%;
+    transform: perspective(200px) rotatey(180deg) rotateY(180deg);
+  }
+  100% {
+    width: 100%;
+    transform: perspective(200px) rotatey(360deg) rotateY(360deg);
+  }
+}
 header {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.714);
@@ -430,22 +484,108 @@ header .nav-logo {
   background-size: cover;
   background-attachment: fixed;
 }
-
-.img-box {
+.portfolio .img-box {
   width: 100%;
   height: 300px;
   overflow: hidden;
   transition: all 0.5s;
   filter: grayscale(100%);
 }
-.img-box:hover img {
+.portfolio .img-box:hover img {
   transform: translateY(-1000px);
 }
-.img-box:hover {
+.portfolio .img-box:hover {
   filter: grayscale(0%);
 }
-.img-box img {
+.portfolio .img-box img {
   transition: all 15s;
+}
+
+.contact iframe {
+  width: 100%;
+}
+.contact .contact-heading h1 {
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  font-weight: 500;
+  text-align: center;
+}
+.contact .contact-detail form input,
+.contact .contact-detail form textarea {
+  margin-top: 40px;
+  font-size: 17px;
+  border: none;
+  border-bottom: 2px solid rgba(49, 48, 48, 0.662);
+}
+.contact .contact-detail form .width-100,
+.contact .contact-detail form textarea {
+  width: 100%;
+}
+.contact .contact-detail form a .glow-on-hover {
+  width: 250px;
+  height: 50px;
+  border: #0385db;
+  color: #fff;
+  background: #006eb7;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  display: block;
+  margin-top: 20px;
+}
+.contact .contact-detail form a .glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.contact .contact-detail form a .glow-on-hover:active {
+  color: #fff;
+}
+.contact .contact-detail form a .glow-on-hover:active:after {
+  background: transparent;
+}
+.contact .contact-detail form a .glow-on-hover:hover:before {
+  opacity: 1;
+}
+.contact .contact-detail form a .glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0385db;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+footer {
+  background-color: rgba(98, 118, 217, 0.0823529412);
 }
 
 @media (max-width: 991px) {
@@ -511,6 +651,4 @@ header .nav-logo {
   width: 100%;
   z-index: 999;
   background-color: white;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
