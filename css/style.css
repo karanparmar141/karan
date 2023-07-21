@@ -612,7 +612,7 @@ footer {
     height: 350px;
     background-color: #fff;
     left: 0%;
-    top: -300%;
+    top: 90%;
     z-index: -1;
     transition: all 0.5s;
   }
@@ -625,7 +625,7 @@ footer {
     display: block;
   }
   .show nav ul {
-    top: 90%;
+    top: -300%;
   }
   .banner-bg .banner-content h2 {
     text-align: center;
