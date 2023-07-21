@@ -287,22 +287,22 @@ header .nav-logo {
 .about .about-detail .about-img:hover img {
   filter: grayscale(1.2);
 }
-.about .about-content p {
+.about .about-detail .about-content p {
   text-transform: capitalize;
   font-size: 25px;
   line-height: 35px;
   padding-top: 5px;
 }
-.about .about-content h2 {
+.about .about-detail .about-content h2 {
   margin: 20px 0;
 }
-.about .about-content span {
+.about .about-detail .about-content span {
   font-size: 22px;
   letter-spacing: 2px;
   word-spacing: 5px;
   font-weight: 500;
 }
-.about .about-content .glow-on-hover {
+.about .about-detail .about-content .glow-on-hover {
   width: 220px;
   height: 50px;
   border: #0385db;
@@ -317,7 +317,7 @@ header .nav-logo {
   display: block;
   margin-top: 20px;
 }
-.about .about-content .glow-on-hover:before {
+.about .about-detail .about-content .glow-on-hover:before {
   content: "";
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
@@ -333,16 +333,16 @@ header .nav-logo {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-.about .about-content .glow-on-hover:active {
+.about .about-detail .about-content .glow-on-hover:active {
   color: #fff;
 }
-.about .about-content .glow-on-hover:active:after {
+.about .about-detail .about-content .glow-on-hover:active:after {
   background: transparent;
 }
-.about .about-content .glow-on-hover:hover:before {
+.about .about-detail .about-content .glow-on-hover:hover:before {
   opacity: 1;
 }
-.about .about-content .glow-on-hover:after {
+.about .about-detail .about-content .glow-on-hover:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -484,6 +484,9 @@ header .nav-logo {
   background-size: cover;
   background-attachment: fixed;
 }
+.portfolio .comman-hedding h1 {
+  color: #fff;
+}
 .portfolio .img-box {
   width: 100%;
   height: 300px;
@@ -589,6 +592,9 @@ footer {
 }
 
 @media (max-width: 991px) {
+  .text-center {
+    text-align: center;
+  }
   .order-1 {
     order: 2;
   }
@@ -643,6 +649,9 @@ footer {
 @media (max-width: 767px) {
   .show nav ul {
     top: -350%;
+  }
+  .about .about-detail .about-content .glow-on-hover {
+    width: 100%;
   }
 }
 .fixed {
