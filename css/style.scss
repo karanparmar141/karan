@@ -13,6 +13,10 @@
     margin: auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     width: 100%;
 }
@@ -298,14 +302,20 @@ header {
                 transition: all 0.5s;
                 margin: 0px 10px;
 
-                i {
-                    font-size: 25px;
+                a {
+                    i {
+                        color:$black;
+                        font-size: 25px;
+                    }
                 }
 
                 &:hover {
                     color: $primery-700;
                     background-color: $white;
                     border: 2px solid $primery-900;
+                }
+                &:hover a i {
+                    color: $primery-700;
                 }
             }
         }
@@ -343,19 +353,19 @@ header {
                 line-height: 35px;
                 padding-top: 5px;
             }
-    
+
             h2 {
                 margin: 20px 0;
-    
+
             }
-    
+
             span {
                 font-size: 22px;
                 letter-spacing: 2px;
                 word-spacing: 5px;
                 font-weight: 500;
             }
-    
+
             .glow-on-hover {
                 width: 220px;
                 height: 50px;
@@ -370,7 +380,7 @@ header {
                 font-size: 15px;
                 display: block;
                 margin-top: 20px;
-    
+
                 &:before {
                     content: '';
                     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
@@ -387,19 +397,19 @@ header {
                     transition: opacity .3s ease-in-out;
                     border-radius: 10px;
                 }
-    
+
                 &:active {
                     color: $white;
                 }
-    
+
                 &:active:after {
                     background: transparent;
                 }
-    
+
                 &:hover:before {
                     opacity: 1;
                 }
-    
+
                 &:after {
                     z-index: -1;
                     content: '';
@@ -412,16 +422,16 @@ header {
                     border-radius: 10px;
                 }
             }
-    
+
             @keyframes glowing {
                 0% {
                     background-position: 0 0;
                 }
-    
+
                 50% {
                     background-position: 400% 0;
                 }
-    
+
                 100% {
                     background-position: 0 0;
                 }
@@ -579,11 +589,13 @@ header {
     background-image: url(../img/R.jpeg);
     background-size: cover;
     background-attachment: fixed;
-    .comman-hedding{
-        h1{
-            color:$white;
+
+    .comman-hedding {
+        h1 {
+            color: $white;
         }
     }
+
     .img-box {
         width: 100%;
         height: 300px;
@@ -712,8 +724,9 @@ header {
         }
     }
 }
+
 // footer 
-footer{
+footer {
     background-color: #6276d915;
 }
 
@@ -723,11 +736,92 @@ footer{
 
 // media 
 @media (max-width:991px) {
-    .text-center{
+    .text-center {
         text-align: center;
     }
+
     .order-1 {
         order: 2;
+    }
+
+    .contact {
+
+        .contact-detail {
+            form {
+                a {
+                    .glow-on-hover {
+                        width: 200px;
+                        height: 50px;
+                        border: $primery-700;
+                        color: $white;
+                        background: $primery-900;
+                        cursor: pointer;
+                        position: relative;
+                        z-index: 0;
+                        border-radius: 10px;
+                        font-weight: 700;
+                        font-size: 15px;
+                        display: block;
+                        margin-top: 20px;
+
+                        &:before {
+                            content: '';
+                            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                            position: absolute;
+                            top: -2px;
+                            left: -2px;
+                            background-size: 400%;
+                            z-index: -1;
+                            filter: blur(5px);
+                            width: 100%;
+                            height: 100%;
+                            animation: glowing 20s linear infinite;
+                            opacity: 0;
+                            transition: opacity .3s ease-in-out;
+                            border-radius: 10px;
+                        }
+
+                        &:active {
+                            color: $white;
+                        }
+
+                        &:active:after {
+                            background: transparent;
+                        }
+
+                        &:hover:before {
+                            opacity: 1;
+                        }
+
+                        &:after {
+                            z-index: -1;
+                            content: '';
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background: $primery-700;
+                            left: 0;
+                            top: 0;
+                            border-radius: 10px;
+                        }
+                    }
+
+                    @keyframes glowing {
+                        0% {
+                            background-position: 0 0;
+                        }
+
+                        50% {
+                            background-position: 400% 0;
+                        }
+
+                        100% {
+                            background-position: 0 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .order-2 {
@@ -748,7 +842,7 @@ footer{
                 height: 350px;
                 background-color: $white;
                 left: 0%;
-                top: 90%;
+                top: -300%;
                 z-index: -1;
                 transition: all 0.5s;
 
@@ -766,7 +860,7 @@ footer{
     }
 
     .show nav ul {
-        top: -300%;
+        top: 90%;
     }
 
     .banner-bg {
@@ -807,16 +901,52 @@ footer{
             }
         }
     }
+
+    footer {
+
+        h2,
+        h3 {
+            font-size: 15px;
+        }
+    }
 }
 
 @media (max-width:767px) {
-    .show nav ul {
-        top: -350%;
+
+    header {
+        nav {
+            ul {
+                flex-direction: column;
+                position: absolute;
+                width: 100%;
+                height: 350px;
+                background-color: $white;
+                left: 0%;
+                top: -400%;
+                z-index: -1;
+                transition: all 0.5s;
+
+                li {
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px 35px;
+                }
+            }
+        }
+
+        .nav-logo {
+            display: block;
+        }
     }
-    .about{
-        .about-detail{
-            .about-content{
-                .glow-on-hover{
+
+    .show nav ul {
+        top: 90%;
+    }
+
+    .about {
+        .about-detail {
+            .about-content {
+                .glow-on-hover {
                     width: 100%;
                 }
             }
