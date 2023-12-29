@@ -152,6 +152,7 @@ ol {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999;
 }
 .sq-loder .sq-loder-4 {
   width: 100px;
@@ -494,22 +495,54 @@ header .nav-logo {
 }
 .portfolio .comman-hedding h1 {
   color: #fff;
+  margin-bottom: 15px;
 }
 .portfolio .img-box {
   width: 100%;
   height: 300px;
+  position: relative;
   overflow: hidden;
   transition: all 0.5s;
   filter: grayscale(100%);
 }
+.portfolio .img-box img {
+  width: 100%;
+  transition: all 15s;
+}
+.portfolio .img-box p {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
 .portfolio .img-box:hover img {
   transform: translateY(-1000px);
 }
+.portfolio .img-box .img-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 20px;
+  padding-top: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+  font-family: "Baloo Thambi 2";
+  transition: all 0.5s;
+  opacity: 0;
+}
+.portfolio .img-box .img-content p {
+  color: #0385db;
+}
+.portfolio .img-box:hover .img-content {
+  opacity: 1;
+}
 .portfolio .img-box:hover {
   filter: grayscale(0%);
-}
-.portfolio .img-box img {
-  transition: all 15s;
+  filter: blur(0.8);
 }
 
 .contact iframe {
@@ -683,8 +716,9 @@ footer {
     background-color: #fff;
     left: 0%;
     top: -300%;
-    z-index: -1;
+    z-index: -99;
     transition: all 0.5s;
+    display: none;
   }
   header nav ul li {
     width: 100%;
@@ -696,6 +730,7 @@ footer {
   }
   .show nav ul {
     top: 90%;
+    display: block;
   }
   .banner-bg .banner-content h2 {
     text-align: center;
@@ -729,7 +764,8 @@ footer {
     background-color: #fff;
     left: 0%;
     top: -400%;
-    z-index: -1;
+    display: none;
+    z-index: 99;
     transition: all 0.5s;
   }
   header nav ul li {
@@ -742,6 +778,7 @@ footer {
   }
   .show nav ul {
     top: 90%;
+    display: block;
   }
   .about .about-detail .about-content .glow-on-hover {
     width: 100%;
