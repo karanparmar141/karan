@@ -502,7 +502,6 @@
         form.addEventListener('submit', e => {
             e.preventDefault()
             let number = document.getElementById("number").value
-            let message = document.getElementById("message").value
 
             if (number.length != 10) {
                 document.getElementById("error").innerHTML = "=> please enter the proper number"
