@@ -439,16 +439,16 @@
                     <div class="contact-detail">
                         <form method="post" name="contact-form">
                             <div class="row justfy-content-between">
-                                <input type="text" name="your-name" required placeholder="enter your name"
+                                <input type="text" name="your-name" id="name" required placeholder="enter your name"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="email" name="your-email" required placeholder="enter your email"
+                                <input type="email" name="your-email" id="mail" required placeholder="enter your email"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <input type="number" name="your-number" id="number"
                                     placeholder="enter your mobille number"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <p id="error"></p>
+                                <p id="error" class="font-cinzel"></p>
                             </div>
-                            <textarea name="message" cols="71" rows="6" placeholder="message"
+                            <textarea name="message" cols="71" rows="6" id="message" placeholder="message"
                                 class="captalize"></textarea>
                             <div class="row justfy-content-between">
                                 <input type="submit" value="Submit" id="submit"
@@ -513,7 +513,12 @@
                         document.getElementById("submit").value = "submit"
                         alert("Thank you ! your form is submitted successfully.i will contact you shortly")
                     })
-                    .then(() => { window.location.reload(); })
+                    .then(() => {
+                        document.getElementById("number").value = ""
+                        document.getElementById("mail").value = ""
+                        document.getElementById("message").value = ""
+                        document.getElementById("name").value = ""
+                    })
                     .catch(error => console.error('Error!', error.message))
             }
         })
