@@ -154,52 +154,30 @@ ol {
   align-items: center;
   z-index: 99999;
 }
-.sq-loder .sq-loder-4 {
+.sq-loder .loder-4 {
   width: 100px;
   height: 100px;
-  border: 5px solid #0c1957;
-  animation: scale1 2s linear infinite;
+  margin: 30px 20px;
+  padding: 4px;
+  border: 5px solid #006eb7;
+  border-left-color: transparent;
+  border-right-color: transparent;
   border-radius: 100%;
+  animation: route-4 2s linear infinite;
 }
-.sq-loder .sq-loder-4 .in-sq-loder-4 {
+.sq-loder .in-loder {
   width: 100%;
   height: 100%;
+  border: 5px solid cornsilk;
   border-radius: 100%;
-  border: 5px solid rgba(93, 131, 227, 0.5882352941);
-  animation: scale2 2s ease-in infinite;
   overflow: hidden;
 }
-.sq-loder .sq-loder-4 .in-sq-loder-4 .in-sq-loder-4 img {
-  margin: 5px;
-  animation: scale1 2s ease-out infinite;
+@keyframes route-4 {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes scale1 {
-  0% {
-    transform: perspective(200px) rotatex(0deg) rotateY(0deg);
-  }
-  50% {
-    transform: perspective(200px) rotatey(180deg) rotateY(180deg);
-  }
-  100% {
-    transform: perspective(200px) rotatey(360deg) rotateY(360deg);
-  }
-}
-@keyframes scale2 {
-  0% {
-    width: 100%;
-    transform: perspective(200px) rotatex(0deg) rotateY(0deg);
-  }
-  50% {
-    width: 80%;
-    height: 80%;
-    transform: perspective(200px) rotatey(180deg) rotateY(180deg);
-  }
-  100% {
-    width: 100%;
-    transform: perspective(200px) rotatey(360deg) rotateY(360deg);
-  }
-}
 header {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.714);
@@ -560,12 +538,18 @@ header .nav-logo {
   font-size: 17px;
   border: none;
   border-bottom: 2px solid rgba(49, 48, 48, 0.662);
+  outline: none;
 }
 .contact .contact-detail form .width-100,
 .contact .contact-detail form textarea {
   width: 100%;
 }
-.contact .contact-detail form a .glow-on-hover {
+.contact .contact-detail form #error, .contact .contact-detail form #error2 {
+  color: red;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.contact .contact-detail form .glow-on-hover {
   width: 250px;
   height: 50px;
   border: #0385db;
@@ -580,7 +564,7 @@ header .nav-logo {
   display: block;
   margin-top: 20px;
 }
-.contact .contact-detail form a .glow-on-hover:before {
+.contact .contact-detail form .glow-on-hover:before {
   content: "";
   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
   position: absolute;
@@ -596,16 +580,16 @@ header .nav-logo {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
-.contact .contact-detail form a .glow-on-hover:active {
+.contact .contact-detail form .glow-on-hover:active {
   color: #fff;
 }
-.contact .contact-detail form a .glow-on-hover:active:after {
+.contact .contact-detail form .glow-on-hover:active:after {
   background: transparent;
 }
-.contact .contact-detail form a .glow-on-hover:hover:before {
+.contact .contact-detail form .glow-on-hover:hover:before {
   opacity: 1;
 }
-.contact .contact-detail form a .glow-on-hover:after {
+.contact .contact-detail form .glow-on-hover:after {
   z-index: -1;
   content: "";
   position: absolute;

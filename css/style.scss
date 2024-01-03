@@ -163,62 +163,30 @@ $black: #000;
     justify-content: center;
     align-items: center;
     z-index: 99999;
-    .sq-loder-4 {
+    .loder-4{
         width: 100px;
         height: 100px;
-        border: 5px solid #0c1957;
-        animation: scale1 2s linear infinite;
+        margin: 30px 20px;
+        padding: 4px;
+        border: 5px solid $primery-900;
+        border-left-color:transparent ;
+        border-right-color:transparent ;
         border-radius: 100%;
-
-        .in-sq-loder-4 {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-            border: 5px solid #5d83e396;
-            animation: scale2 2s ease-in infinite;
-            overflow: hidden;
-
-            .in-sq-loder-4 img {
-                margin: 5px;
-                animation: scale1 2s ease-out infinite;
-            }
+        animation: route-4 2s linear infinite;
+    }
+    .in-loder{
+        width: 100%;
+        height: 100%;
+        border: 5px solid cornsilk;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    @keyframes route-4 {
+        100%{
+            transform: rotate(360deg);
         }
-
     }
 }
-
-@keyframes scale1 {
-    0% {
-        transform: perspective(200px) rotatex(0deg) rotateY(0deg);
-    }
-
-    50% {
-        transform: perspective(200px) rotatey(180deg) rotateY(180deg);
-    }
-
-    100% {
-        transform: perspective(200px) rotatey(360deg) rotateY(360deg);
-    }
-}
-
-@keyframes scale2 {
-    0% {
-        width: 100%;
-        transform: perspective(200px) rotatex(0deg) rotateY(0deg);
-    }
-
-    50% {
-        width: 80%;
-        height: 80%;
-        transform: perspective(200px) rotatey(180deg) rotateY(180deg);
-    }
-
-    100% {
-        width: 100%;
-        transform: perspective(200px) rotatey(360deg) rotateY(360deg);
-    }
-}
-
 // header
 header {
     position: absolute;
@@ -304,7 +272,7 @@ header {
 
                 a {
                     i {
-                        color:$black;
+                        color: $black;
                         font-size: 25px;
                     }
                 }
@@ -314,6 +282,7 @@ header {
                     background-color: $white;
                     border: 2px solid $primery-900;
                 }
+
                 &:hover a i {
                     color: $primery-700;
                 }
@@ -603,20 +572,24 @@ header {
         position: relative;
         overflow: hidden;
         transition: all 0.5s;
-        filter: grayscale(100%); 
+        filter: grayscale(100%);
+
         img {
             width: 100%;
             transition: all 15s;
         }
-        p{
+
+        p {
             color: $white;
             text-transform: uppercase;
             text-align: center;
         }
+
         &:hover img {
             transform: translateY(-1000px);
         }
-        .img-content{
+
+        .img-content {
             position: absolute;
             top: 0;
             left: 0;
@@ -628,17 +601,20 @@ header {
             font-size: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight:800 ;
+            font-weight: 800;
             font-family: $font-baloo;
             transition: all 0.5s;
             opacity: 0;
-            p{
+
+            p {
                 color: $primery-700;
             }
         }
-        &:hover .img-content{
+
+        &:hover .img-content {
             opacity: 1;
         }
+
         &:hover {
             filter: grayscale(0%);
             filter: blur(0.8);
@@ -670,83 +646,87 @@ header {
                 font-size: 17px;
                 border: none;
                 border-bottom: 2px solid rgba(49, 48, 48, 0.662);
+                outline: none;
             }
 
             .width-100,
             textarea {
                 width: 100%;
             }
+            #error,#error2{
+                color: red;
+                text-transform: uppercase;
+                font-weight: 600;
 
-            a {
-                .glow-on-hover {
-                    width: 250px;
-                    height: 50px;
-                    border: $primery-700;
-                    color: $white;
-                    background: $primery-900;
-                    cursor: pointer;
-                    position: relative;
-                    z-index: 0;
+            }
+            .glow-on-hover {
+                width: 250px;
+                height: 50px;
+                border: $primery-700;
+                color: $white;
+                background: $primery-900;
+                cursor: pointer;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+                font-weight: 700;
+                font-size: 15px;
+                display: block;
+                margin-top: 20px;
+
+                &:before {
+                    content: '';
+                    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                    position: absolute;
+                    top: -2px;
+                    left: -2px;
+                    background-size: 400%;
+                    z-index: -1;
+                    filter: blur(5px);
+                    width: 100%;
+                    height: 100%;
+                    animation: glowing 20s linear infinite;
+                    opacity: 0;
+                    transition: opacity .3s ease-in-out;
                     border-radius: 10px;
-                    font-weight: 700;
-                    font-size: 15px;
-                    display: block;
-                    margin-top: 20px;
-
-                    &:before {
-                        content: '';
-                        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-                        position: absolute;
-                        top: -2px;
-                        left: -2px;
-                        background-size: 400%;
-                        z-index: -1;
-                        filter: blur(5px);
-                        width: 100%;
-                        height: 100%;
-                        animation: glowing 20s linear infinite;
-                        opacity: 0;
-                        transition: opacity .3s ease-in-out;
-                        border-radius: 10px;
-                    }
-
-                    &:active {
-                        color: $white;
-                    }
-
-                    &:active:after {
-                        background: transparent;
-                    }
-
-                    &:hover:before {
-                        opacity: 1;
-                    }
-
-                    &:after {
-                        z-index: -1;
-                        content: '';
-                        position: absolute;
-                        width: 100%;
-                        height: 100%;
-                        background: $primery-700;
-                        left: 0;
-                        top: 0;
-                        border-radius: 10px;
-                    }
                 }
 
-                @keyframes glowing {
-                    0% {
-                        background-position: 0 0;
-                    }
+                &:active {
+                    color: $white;
+                }
 
-                    50% {
-                        background-position: 400% 0;
-                    }
+                &:active:after {
+                    background: transparent;
+                }
 
-                    100% {
-                        background-position: 0 0;
-                    }
+                &:hover:before {
+                    opacity: 1;
+                }
+
+                &:after {
+                    z-index: -1;
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: $primery-700;
+                    left: 0;
+                    top: 0;
+                    border-radius: 10px;
+                }
+            }
+
+            @keyframes glowing {
+                0% {
+                    background-position: 0 0;
+                }
+
+                50% {
+                    background-position: 400% 0;
+                }
+
+                100% {
+                    background-position: 0 0;
                 }
             }
 

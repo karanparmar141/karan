@@ -12,8 +12,8 @@
 <body>
     <!-- loader -->
     <div class="sq-loder">
-        <div class="sq-loder-4">
-            <div class="in-sq-loder-4"><img src="img/loader.jpeg" alt=""></div>
+        <div class="loder-4">
+            <div class="in-loder"><img src="img/loader.jpeg" alt=""></div>
         </div>
     </div>
     <!-- header  -->
@@ -437,19 +437,22 @@
                         <h1 class="uppercase font-robot">you can contact me :</h1>
                     </div>
                     <div class="contact-detail">
-                        <form method="post" id="form">
+                        <form method="post" name="contact-form">
                             <div class="row justfy-content-between">
-                                <input type="text" name="name" placeholder="enter your name"
+                                <input type="text" name="your-name" required placeholder="enter your name"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="email" name="email" placeholder="enter your email"
+                                <input type="email" name="your-email" required placeholder="enter your email"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <input type="number" name="contact" placeholder="enter your mobille number"
+                                <input type="number" name="your-number" id="number"
+                                    placeholder="enter your mobille number"
                                     class="font-baloo captalize col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <p id="error"></p>
                             </div>
                             <textarea name="message" cols="71" rows="6" placeholder="message"
                                 class="captalize"></textarea>
                             <div class="row justfy-content-between">
-                                <button name="btn" class="font-robot uppercase glow-on-hover">submit</button>
+                                <input type="submit" value="Submit" id="submit"
+                                    class="font-robot uppercase glow-on-hover">
                             </div>
                         </form>
                     </div>
@@ -486,31 +489,36 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
     <script src="js/jquery-3.6.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!-- <script>
-        let form = document.getElementById('form');
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-            let url='https://script.google.com/macros/s/AKfycbyd8Cx9nw988uvQDu4gWWuJCEr-kliSu9yxKeAoSYIzuVmRgv-7pxwfPLG4cpsyT9hi/exec'
-            let d = new FormData(form)
-            // console.log(d);
-            fetch(url)
-            .then((res)=>res.text)
-            .then((res)=>console.log(res))
-        })
 
-    </script> -->
+    <!-- get data on gogole sheets -->
+    <script>
+
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxWUqSn3jkULIY-TcghgqajOM3tK7577JvHD7rQu36ld2lr05ngjxbdoBo41zZqun0A/exec'
+
+        const form = document.forms['contact-form']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            let number = document.getElementById("number").value
+            let message = document.getElementById("message").value
+
+            if (number.length != 10) {
+                document.getElementById("error").innerHTML = "=> please enter the proper number"
+            }
+            else {
+                document.getElementById("submit").value = "submiting"
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .then(response => {
+                        document.getElementById("submit").value = "submit"
+                        alert("Thank you ! your form is submitted successfully.i will contact you shortly")
+                    })
+                    .then(() => { window.location.reload(); })
+                    .catch(error => console.error('Error!', error.message))
+            }
+        })
+    </script>
     <script>
         $(window).load(function () {
             $(".sq-loder").fadeOut(3000);
