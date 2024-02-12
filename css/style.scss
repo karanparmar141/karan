@@ -258,7 +258,6 @@ header {
         }
 
         .banner-icon {
-            align-items: center;
             justify-content: end;
 
             .w-50 {
@@ -266,12 +265,13 @@ header {
                 height: 50px;
                 border-radius: 15px;
                 text-align: center;
-                line-height: 55px;
-                transition: all 0.5s;
+                line-height: 50px;
                 margin: 0px 10px;
-
+                transition: all 0.5s;
+                
                 a {
                     i {
+                        line-height: 48px;
                         color: $black;
                         font-size: 25px;
                     }

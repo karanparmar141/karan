@@ -233,7 +233,6 @@ header .nav-logo {
   color: #006eb7;
 }
 .banner-bg .banner-content .banner-icon {
-  align-items: center;
   justify-content: end;
 }
 .banner-bg .banner-content .banner-icon .w-50 {
@@ -241,11 +240,12 @@ header .nav-logo {
   height: 50px;
   border-radius: 15px;
   text-align: center;
-  line-height: 55px;
-  transition: all 0.5s;
+  line-height: 50px;
   margin: 0px 10px;
+  transition: all 0.5s;
 }
 .banner-bg .banner-content .banner-icon .w-50 a i {
+  line-height: 48px;
   color: #000;
   font-size: 25px;
 }
