@@ -87,7 +87,7 @@
                             Developer.</p>
                         <h2 class="uppercase font-robot captalize">i think about status in my life :</h2>
                         <span class="font-baloo uppercase">"EveryDay is a New Challenge"</span>
-                        <a href="img/cv.pdf" target="_blank"><button class="glow-on-hover font-baloo uppercase"
+                        <a href="img/resume_karan_parmar.pdf" target="_blank"><button class="glow-on-hover font-baloo uppercase"
                                 type="button">download cv</button></a>
                     </div>
                 </div>
@@ -523,7 +523,6 @@
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwnOYl5bUDqqvbCw_sBEXOa4Q0xBRhlBZqOVN2hmiuxML4do40LZeS-UF5W2fXS28Lz/exec'
 
         const form = document.forms['contact-form']
-
         form.addEventListener('submit', e => {
             e.preventDefault()
             let number = document.getElementById("number").value
@@ -536,6 +535,7 @@
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                     .then(response => {
                         document.getElementById("submit").value = "submit"
+                        console.log(response);
                         alert("Thank you ! your form is submitted successfully.i will contact you shortly")
                     })
                     .then(() => {
